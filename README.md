@@ -8,12 +8,12 @@
 
 ### Cosma
 
-[Cosma](https://cosma.graphlab.fr/en/) is an open source app which can generate such a graph view, from a directory of text files written in Markdown, in a single HTML file called the **cosmoscope**. It offers a simple way to explore, visualize and share your knowledge graph with others. *Software comes and goes, but data should last*. Plain text are **future-proof**, hence the importance of not making your notes too dependent on a particular software syntax and of being able to migrate them easily.
+[Cosma](https://cosma.graphlab.fr/en/) is an [open source app](https://github.com/graphlab-fr/cosma) which can generate such a graph view, from a directory of text files written in Markdown, in a single HTML file called the **cosmoscope**. It offers a simple way to explore, visualize and share your knowledge graph with others. *Software comes and goes, but data should last*. Plain text are **future-proof**, hence the importance of not making your notes too dependent on a particular software syntax and of being able to migrate them easily.
 
 ## A Python script to convert Obsidian vault toward Cosma or Zettlr
 
-- Cosma uses the same syntax as [Zettlr](https://zettlr.com), another great editor geared towards academic work, whose [[internal links]] relies on unique identifiers, in the spirit of the [Zettelkasten method](https://docs.zettlr.com/en/academic/zkn-method/).
-- Obsidian is different, as it uses the [[filename]] to link note files, which in my opinion is more restrictive in terms of **interoperability**. 
+- Cosma uses the same syntax as [Zettlr](https://zettlr.com), another great editor geared towards academic work, whose `[[internal links]]` relies on unique identifiers `[[ID]]`, in the spirit of the [Zettelkasten method](https://docs.zettlr.com/en/academic/zkn-method/).
+- Obsidian is different, as it uses the `[[filename]]` to link note files, which in my opinion is more restrictive in terms of **interoperability**. 
 
 There are at least two good reasons to convert a collection of Markdown files written in Obsidian to make it compatible with Cosma:
 - To ensure that your notes will still be readable and editable by other software such as Zettlr (for interoperability and future-proof)
@@ -24,8 +24,8 @@ In practise, the script follows these steps:
 2. *(Optional)* **Filter Markdown files** in the output folder according to particular type or tags
 3. **Create metadata** (ID and title) for each Markdown file where they were missing
 4. **Save a CSV file** containing associated pairs (ID, title) to preserve the correspondence
-5. **Replace all wiki-links** [[filename]] in Obsidian format to Cosma, mixing [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) and [Obsidian style using alias](https://help.obsidian.md/How+to/Add+aliases+to+note), namely [[ID|alias]]
-6. *(Optional)* **Replace Obsidian typed links** using [Juggl syntax](https://juggl.io/Link+Types) ("- prefix [[link]]"") to the more flexible syntax of semantic links in Cosma ("[[prefix:link]]")
+5. **Replace all wiki-links** [[filename]] in Obsidian to [Cosma syntax](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links), mixing [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) and [Obsidian style using alias](https://help.obsidian.md/How+to/Add+aliases+to+note), namely [[ID|alias]]
+6. *(Optional)* **Replace Obsidian typed links** using [Juggl syntax](https://juggl.io/Link+Types) (`- prefix [[link]]"`) to the more flexible syntax of [semantic links in Cosma](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links) (`[[prefix:link]]`)
 
 ## Installation
 
@@ -57,7 +57,7 @@ Optional arguments:
 
 Known bugs in Cosma:
 - Alias should not contain special characters (comma, hypens, ...) only words and spaces.
-- Title should not contain dates only (e.g 2022-12-26)
+- Title should not contain dates only (e.g 2022-12-26, see on [GitHub](https://github.com/graphlab-fr/cosma/issues/33))
 
 ## Related repository
 
