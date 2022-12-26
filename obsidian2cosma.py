@@ -18,7 +18,7 @@ Optional arguments:
 Author: Kévin Polisano 
 Contact: kevin.polisano@cnrs.fr
 
-License:
+License: GNU General Public License v3.0
 
 """
 
