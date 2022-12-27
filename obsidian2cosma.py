@@ -84,8 +84,9 @@ def copy_system_birthtime(source, destination):
   timestamp = creation_date(source)
   # Convert in the format YYYYMMDDHHmm.ss (see man touch)
   birthtime = dt.fromtimestamp(timestamp).strftime('%Y%m%d%H%M.%S')
-  # Assign source file's creation date to destination's one
-  str_cmd = "touch -t " + birthtime + " " + destination.replace(" ", "\ ")
+  # Assign source file's creation date to destination's one (but also overwrite access and modification dates)
+  # Can use instead SetFile -d "$(GetFileInfo -d source)" destination to avoid this issue
+  str_cmd = "touch -t " + birthtime + " " + "\"" + destination + "\"" 
   os.system(str_cmd)
 
 def create_id(file) -> str:
@@ -136,7 +137,7 @@ def parse_yaml_front_matter(content):
   return {}, content
 
 def filter_files(root, files, type=None, tags=None):
-  """Filters a list of Markdown files based on the given type and tags."""
+  """Filters a list of Markdown files based on the given type and tags, and images."""
   filtered_files = []
   for file in files:
     # Select Markdown files
@@ -181,10 +182,13 @@ def filter_files(root, files, type=None, tags=None):
         # Otherwise the file is selected
         printv("[SELECTED] {}".format(file))
         filtered_files.append(file)
+    if file.endswith(".jpg") or file.endswith(".jpeg") or file.endswith(".png"):
+      printv("[IMAGE SELECTED] {}".format(file))
+      filtered_files.append(file)
   return filtered_files
 
-def copy_and_filter_markdown_files(input_folder, output_folder):
-  """Function to copy all Markdown files from the input folder and its subfolders to the output folder"""
+def copy_and_filter_files(input_folder, output_folder):
+  """Function to copy all Markdown files and images from the input folder and its subfolders to the output folder"""
   printv("\n=== Filtering files and copying them in the output folder ===\n")
   for root, dirs, files in os.walk(input_folder):
     # Ignore subfolders that start with an underscore
@@ -254,7 +258,9 @@ def metadata_init(files) -> dict:
     # Finally the value "id" is associated to the key "title" in a dictionary
     title2id[title] = id
   # Write the results to a CSV file
-  with open('title2id.csv', 'w', newline='') as csvfile:
+  # csvname = os.path.basename(input_folder) + '_title2id.csv'
+  csvname = os.path.join(output_folder, '_title2id.csv')
+  with open(csvname, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerows(title2id.items())
   # Return the dictionary
@@ -297,6 +303,7 @@ def replace_wiki_links(file, title2id):
   # Substitute all wiki links match with replace_wiki_link(match)
   content = re.sub(r"(?<!!)\[\[(.+?)\]\](?!\()", replace_wiki_link, content)
   printv("[{} links replaced] {}".format(count, os.path.basename(file)))
+  # Replace link images
   # Write the results in the file
   with open(file, "w", encoding="utf-8") as f:
     f.write(content)
@@ -341,10 +348,10 @@ def main():
   # If the output folder does not exist, then create one
   Path(output_folder).mkdir(parents=True, exist_ok=True)
 
-  # Copy all Markdown files from the input folder and subfolders to the output folder
-  copy_and_filter_markdown_files(input_folder, output_folder)
+  # Copy all Markdown files and images from the input folder and subfolders to the output folder
+  copy_and_filter_files(input_folder, output_folder)
 
-  # Store the list of files within the output folder
+  # Store the list of Markdown files within the output folder
   filenames = [file for file in os.listdir(output_folder) if file.endswith(".md")]
   files = [os.path.join(output_folder, file) for file in filenames]
 
