@@ -164,7 +164,7 @@ def copy_and_filter_markdown_files(input_folder, output_folder):
     # Filter Markdown files based on the given type and tags
     filtered_files = filter_files(root, files, type=args.type, tags=args.tags)
     for file in filtered_files:
-      shutil.copy(os.path.join(root, file), output_folder)
+      shutil.copy2(os.path.join(root, file), output_folder)
   
 def metadata_init(files) -> dict:
   """Function to initialize metadata and save them in a csv file
