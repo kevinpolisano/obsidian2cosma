@@ -183,7 +183,7 @@ def filter_files(root, files, type=None, tags=None):
         printv("[SELECTED] {}".format(file))
         filtered_files.append(file)
     if file.endswith(".jpg") or file.endswith(".jpeg") or file.endswith(".png"):
-      printv("[IMAGE SELECTED] {}".format(file))
+      printv("[SELECTED] {}".format(file))
       filtered_files.append(file)
   return filtered_files
 
@@ -269,7 +269,8 @@ def metadata_init(files) -> dict:
 def replace_wiki_links(file, title2id):
   """Function to replace every single wiki-style [[internal link]] in a Markdown file with [[id | internal link]]
   where internal link refers to the title (possibily with an alias) of an other Markdown file
-  whose id can be found in the dictionary title2id"""
+  whose id can be found in the dictionary title2id
+  Eventually transforms image wiki-links ![[image.{jpg,jpeg,png}]] to ![](image.{jpg,jpeg,png})"""
   with open(file, "r", encoding="utf-8") as f:
     content = f.read()
   global count # Variable counting the number of links replaced
@@ -302,8 +303,15 @@ def replace_wiki_links(file, title2id):
       return f"[[{id}|{link_text}]]"
   # Substitute all wiki links match with replace_wiki_link(match)
   content = re.sub(r"(?<!!)\[\[(.+?)\]\](?!\()", replace_wiki_link, content)
+  # Eventually let replace images wiki-link
+  pattern = r'!\[\[(.+?\.jpe?g|.+?\.png)\]\]' # ![[image.{jpg,jpeg,png}]]
+  matches = re.finditer(pattern, content)
+  # Transform ![[image.{jpg,jpeg,png}]] to ![](image.{jpg,jpeg,png})
+  for match in matches:
+    image_link = match.group(1)
+    content = content.replace(match.group(0), '![]({})'.format(image_link))
+    count = count + 1
   printv("[{} links replaced] {}".format(count, os.path.basename(file)))
-  # Replace link images
   # Write the results in the file
   with open(file, "w", encoding="utf-8") as f:
     f.write(content)
