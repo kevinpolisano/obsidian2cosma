@@ -23,6 +23,7 @@ License: GNU General Public License v3.0
 """
 
 import os
+import platform
 import argparse
 import re
 import shutil
@@ -60,13 +61,40 @@ def printv(text):
 global currentId
 currentId = int(dt.fromtimestamp(dt.now().timestamp()).strftime('%Y%m%d%H%M%S'))
 
+def creation_date(file):
+  """
+  Try to get the date that a file was created, falling back to when it was
+  last modified if that isn't possible.
+  See http://stackoverflow.com/a/39501288/1709587 for explanation.
+  """
+  if platform.system() == 'Windows':
+    return os.path.getctime(file)
+  else:
+    stat = os.stat(file)
+    try:
+      return stat.st_birthtime
+    except AttributeError:
+      # We're probably on Linux. No easy way to get creation dates here,
+      # so we'll settle for when its content was last modified.
+      return stat.st_mtime
+
+def copy_system_birthtime(source, destination):
+  """Assign the creation date of source file to destination file"""
+  # Get the creation date of source file
+  timestamp = creation_date(source)
+  # Convert in the format YYYYMMDDHHmm.ss (see man touch)
+  birthtime = dt.fromtimestamp(timestamp).strftime('%Y%m%d%H%M.%S')
+  # Assign source file's creation date to destination's one
+  str_cmd = "touch -t " + birthtime + " " + destination.replace(" ", "\ ")
+  os.system(str_cmd)
+
 def create_id(file) -> str:
   """Function to create an 14 digit id by timestamp (year, month, day, hours, minutes and seconds) corresponding to the file creation date"""
   global currentId
   # If the files creation date are available
   if args.creationdate:
     # Retrieve the file creation date
-    timestamp = os.path.getctime(file)
+    timestamp = creation_date(file)
     # Convert the date to a string in the format YYYYMMDDHHMMSS
     return dt.fromtimestamp(timestamp).strftime('%Y%m%d%H%M%S')
   # Otherwise create ad-hoc IDs by incrementing the current ID (initialized with current date)
@@ -164,7 +192,9 @@ def copy_and_filter_markdown_files(input_folder, output_folder):
     # Filter Markdown files based on the given type and tags
     filtered_files = filter_files(root, files, type=args.type, tags=args.tags)
     for file in filtered_files:
-      shutil.copy2(os.path.join(root, file), output_folder)
+      # Copy current file from the input folder to output folder
+      shutil.copy2(os.path.join(root, file), output_folder) # copy2() preserve access and modifications dates
+      copy_system_birthtime(os.path.join(root, file), os.path.join(output_folder, file)) # but birthtime (= creation date) has to be set up manually
   
 def metadata_init(files) -> dict:
   """Function to initialize metadata and save them in a csv file
