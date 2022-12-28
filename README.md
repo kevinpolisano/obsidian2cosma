@@ -20,12 +20,12 @@ There are at least two good reasons to convert a collection of Markdown files wr
 - To be able to **export and share all or part of your knowledge graph with Cosma**, in the form of a single HTML page, simultaneously displaying the notes on the one hand and the graph view on the other.
 
 In practise, the script follows these steps:
-1. **Copy files** of your Obsidian vault (input folder) into another directory (output folder) to avoid accidental changes or losses
+1. **Copy files** of your Obsidian vault (input folder) into another directory (output folder) to avoid accidental changes or losses. Folders starting with "_" are ignored.
 2. *(Optional)* **Filter Markdown files** in the output folder according to particular type or tags
 3. **Create metadata** (ID and title) for each Markdown file where they were missing
 4. **Save a CSV file** containing associated pairs (ID, title) to preserve the correspondence
 5. **Replace all wiki-links** [[filename]] in Obsidian to [Cosma syntax](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links), mixing [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) and [Obsidian style using alias](https://help.obsidian.md/How+to/Add+aliases+to+note), namely [[ID|alias]]
-6. *(Optional)* **Replace Obsidian typed links** using [Juggl syntax](https://juggl.io/Link+Types) (`- prefix [[link]]"`) to the more flexible syntax of [semantic links in Cosma](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links) (`[[prefix:link]]`)
+6. *(Optional)* **Replace Obsidian typed links** using [Juggl syntax](https://juggl.io/Link+Types) (`- prefix [[link]]`) to the more flexible syntax of [semantic links in Cosma](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links) (`[[prefix:link]]`)
 
 ## Installation
 
@@ -52,6 +52,36 @@ Optional arguments:
   --creationdate CREATIONDATE           Fill ID with file creation date if CREATIONDATE=True (e.g --creationdate True)
   --v, --verbose                        Print changes in the terminal
   ```
+  
+## Example
+
+In the directory `data/` you will find an example of Obsidian vault called [LYT-Kit](https://www.linkingyourthinking.com/download-lyt-kit).
+At the folder root run the Python script:
+
+```bash
+python3 obsidian2cosma.py -i data/LYT-Kit -o data/LYT-Kit-cosma --creationdate True --verbose
+```
+
+Once you have installed [Cosma CLI v.2.0.0-beta-1](https://cosma.graphlab.fr/en/docs/cli/user-manual/) go to the output folder and initialize the config file:
+
+```bash
+cd data/LYT-Kit-cosma
+cosma c
+```
+
+It creates a `config.yml` file in which you have to fill the second field with the absolute path of the output folder:
+
+```bash
+files_origin: '/path_to_obsidian2cosma/data/LYT-Kit-cosma'
+```
+
+Finally, let us create the `cosmoscope.html` by running:
+
+```bash
+cosma m
+```
+
+![LYT-Kit graph view displayed by Cosma](data/LYT-Kit/LYT-Kit.png)
   
 ## Issues
 
