@@ -43,6 +43,7 @@ parser.add_argument("--tags", help="Select notes with tags TAGS (e.g --tags 'phi
 parser.add_argument("--typedlinks", help="Syntax of typed links modified if TYPEDLINKS=True (e.g --typedlinks True)", default=False)
 parser.add_argument("--semanticsection", help="Specify in which section typed links are (e.g --semanticsection '## Typed links')", default=None)
 parser.add_argument("--creationdate", help="Fill ID with file creation date if CREATIONDATE=True (e.g --creationdate True)", default=False)
+parser.add_argument("--zettlr", help="Use Zettlr syntax for wiki-links if ZETTLR=True", default=False)
 parser.add_argument("-v", "--verbose", action='store_true', help='Print changes in the terminal')
 
 # Parse the command line arguments
@@ -290,6 +291,9 @@ def replace_wiki_links(file, title2id):
         return f"[[{link_text}]]" # Keep the original link
       # Otherwise find the corresponding ID of this file
       id = title2id[link_title]
+      # If Zettlr syntax: Return [alias]([[id]])
+      if args.zettlr:
+        return f"[{link_alias.strip()}]([[{id}]])"
       # Return [[id | alias]]
       return f"[[{id}|{link_alias.strip()}]]"
     # Otherwise link_text = title
@@ -299,6 +303,9 @@ def replace_wiki_links(file, title2id):
         return f"[[{link_text}]]" # Keep the original link
       # Otherwise find the corresponding ID of this file
       id = title2id[link_text]
+      # If Zettlr syntax: Return [title]([[id]])
+      if args.zettlr:
+        return f"[{link_text}]([[{id}]])"
       # Return [[id | title]]
       return f"[[{id}|{link_text}]]"
   # Substitute all wiki links match with replace_wiki_link(match)

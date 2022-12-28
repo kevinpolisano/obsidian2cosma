@@ -24,7 +24,7 @@ In practise, the script follows these steps:
 2. *(Optional)* **Filter Markdown files** in the output folder according to particular type or tags
 3. **Create metadata** (ID and title) for each Markdown file where they were missing
 4. **Save a CSV file** containing associated pairs (ID, title) to preserve the correspondence
-5. **Replace all wiki-links** [[filename]] in Obsidian to [Cosma syntax](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links), mixing [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) and [Obsidian style using alias](https://help.obsidian.md/How+to/Add+aliases+to+note), namely [[ID|alias]]
+5. **Replace all wiki-links** [[filename]] in Obsidian to [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) (if `--zettlr=True`) or (by default) to [Cosma syntax](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links), mixing [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) and [Obsidian style using alias](https://help.obsidian.md/How+to/Add+aliases+to+note), namely [[ID|alias]]
 6. *(Optional)* **Replace Obsidian typed links** using [Juggl syntax](https://juggl.io/Link+Types) (`- prefix [[link]]`) to the more flexible syntax of [semantic links in Cosma](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links) (`[[prefix:link]]`)
 
 ## Installation
@@ -38,7 +38,8 @@ In practise, the script follows these steps:
  python obsidian2cosma.py -i input_folder_path -o output_folder_path
                         [--type TYPE] [--tags TAGS]
                         [--typedlinks TYPEDLINKS] [--semanticsection SEMANTICSECTION]
-                        [--creationdate CREATIONDATE] 
+                        [--creationdate CREATIONDATE]
+                        [--zettlr ZETTLR] 
                         [--verbose]
 ```
 
@@ -50,17 +51,29 @@ Optional arguments:
   --typedlinks TYPEDLINKS               Syntax of typed links modified if TYPEDLINKS=True (e.g --typedlinks True)
   --semanticsection SEMANTICSECTION     Specify in which section typed links are (e.g --semanticsection "## Typed links")
   --creationdate CREATIONDATE           Fill ID with file creation date if CREATIONDATE=True (e.g --creationdate True)
+  --zettlr ZETTLR                       Use Zettlr syntax for wiki-links if ZETTLR=True (e.g --zettlr True)
   --v, --verbose                        Print changes in the terminal
   ```
   
-## Example
+## Examples
 
 In the directory `data/` you will find an example of Obsidian vault called [LYT-Kit](https://www.linkingyourthinking.com/download-lyt-kit).
+
+### `obsidian2cosma` converts LYT-Kit to LYT-Kit-cosma
+
 At the folder root run the Python script:
 
 ```bash
 python3 obsidian2cosma.py -i data/LYT-Kit -o data/LYT-Kit-cosma --creationdate True --verbose
 ```
+
+This creates a new folder `LYT-Kit-cosma/` whose Markdown files have their **internal links transformed** as follows:
+- `[[filename]]` are replaced by `[[id|filename]]` 
+- `[[filename|alias]]` are replaced by `[[id|alias]]`
+
+where `id` is the identifier of the file `filename.md`, that is `title2id["filename"]="id"` with dictionary `title2id` saved in the CSV file `title2id.csv`.
+
+The next step is to use `cosma` to **generate a graph view** of your notes which can be export in a single HTML file.
 
 Once you have installed [Cosma CLI v.2.0.0-beta-1](https://cosma.graphlab.fr/en/docs/cli/user-manual/) go to the output folder and initialize the config file:
 
@@ -82,6 +95,20 @@ cosma m
 ```
 
 ![LYT-Kit graph view displayed by Cosma](https://github.com/kevinpolisano/obsidian2cosma/blob/main/data/LYT-Kit/LYT-kit.png)
+
+### `obsidian2cosma --zettlr True` converts LYT-Kit to LYT-Kit-zettlr
+
+At the folder root run the Python script:
+
+```bash
+python3 obsidian2cosma.py -i data/LYT-Kit -o data/LYT-Kit-zettlr --creationdate True --zettlr True --verbose
+```
+
+This creates a new folder `LYT-Kit-zettlr/` whose Markdown files have their **internal links transformed** as follows:
+- `[[filename]]` are replaced by `[filename]([[id]])` 
+- `[[filename|alias]]` are replaced by `[alias]([[id]])` 
+
+These files are now readable by [Zettlr](https://docs.zettlr.com/fr/academic/zkn-method/).
   
 ## Issues
 
