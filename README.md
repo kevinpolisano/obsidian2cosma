@@ -81,7 +81,7 @@ Finally, let us create the `cosmoscope.html` by running:
 cosma m
 ```
 
-![LYT-Kit graph view displayed by Cosma](data/LYT-Kit/LYT-Kit.png)
+![LYT-Kit graph view displayed by Cosma](https://github.com/kevinpolisano/obsidian2cosma/blob/main/data/LYT-Kit/LYT-kit.png)
   
 ## Issues
 
