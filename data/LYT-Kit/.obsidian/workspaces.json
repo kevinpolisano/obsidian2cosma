@@ -1,0 +1,635 @@
+{
+  "workspaces": {
+    "Clean Slate": {
+      "main": {
+        "id": "c76020fb7dd0fc05",
+        "type": "split",
+        "children": [
+          {
+            "id": "81c57d886152e09f",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "3574a12289f46027",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": [
+                    {
+                      "leaf": "3574a12289f46027",
+                      "group": null,
+                      "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"LYT Kit.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+                      "eState": "{}"
+                    },
+                    {
+                      "leaf": "3574a12289f46027",
+                      "group": null,
+                      "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Cards/LYT Framework.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+                      "eState": "{}"
+                    },
+                    {
+                      "leaf": "3574a12289f46027",
+                      "group": null,
+                      "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"LYT Kit.md\",\"mode\":\"source\",\"backlinks\":false,\"source\":false}}",
+                      "eState": "{\"cursor\":{\"from\":{\"line\":11,\"ch\":69},\"to\":{\"line\":11,\"ch\":69}}}"
+                    }
+                  ]
+                },
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "LYT Kit.md",
+                    "mode": "source",
+                    "backlinks": false,
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "440b3841429709ed",
+        "type": "split",
+        "children": [
+          {
+            "id": "b208c03cadd231ee",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dddbab8b18fd423a",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "77966b04a7f238ed",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "50a064198c878664",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 265.5,
+        "collapsed": true
+      },
+      "right": {
+        "id": "7a43a6c530e72e44",
+        "type": "split",
+        "children": [
+          {
+            "id": "ea89fdbc5439f479",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4f6e4ddebde66a86",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "4fd5ddab0d74cf4f",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "LYT Kit.md",
+                    "options": {
+                      "collapse-filter": true,
+                      "search": "",
+                      "localJumps": 1,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.5168584698559424,
+                      "close": false
+                    }
+                  }
+                }
+              },
+              {
+                "id": "90d026528dc7103b",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "LYT Kit.md"
+                  }
+                }
+              },
+              {
+                "id": "1dc0cb1cebc39098",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 3
+          },
+          {
+            "id": "cc261747cbab30f2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d535bd36dbc98e0b",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "LYT Kit.md",
+                    "collapseAll": true,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 288.5,
+        "collapsed": true
+      },
+      "active": "3574a12289f46027"
+    },
+    "Base": {
+      "main": {
+        "id": "c4f7fdb608baf8e1",
+        "type": "split",
+        "children": [
+          {
+            "id": "21e598df9d85883f",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "f8b75ad88821792f",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "empty",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "440b3841429709ed",
+        "type": "split",
+        "children": [
+          {
+            "id": "b208c03cadd231ee",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dddbab8b18fd423a",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "77966b04a7f238ed",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": true,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "f2f067fa401a0574",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "recent-files",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 259.5
+      },
+      "right": {
+        "id": "7a43a6c530e72e44",
+        "type": "split",
+        "children": [
+          {
+            "id": "ea89fdbc5439f479",
+            "type": "tabs",
+            "dimension": 48.36702954898911,
+            "children": [
+              {
+                "id": "4f6e4ddebde66a86",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "4fd5ddab0d74cf4f",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "file": "LYT Kit.md",
+                    "options": {
+                      "collapse-filter": true,
+                      "search": "",
+                      "localJumps": 1,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": true,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": false,
+                      "textFadeMultiplier": 0,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.5168584698559424,
+                      "close": false
+                    }
+                  }
+                }
+              },
+              {
+                "id": "90d026528dc7103b",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "LYT Kit.md"
+                  }
+                }
+              },
+              {
+                "id": "1dc0cb1cebc39098",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "cc261747cbab30f2",
+            "type": "tabs",
+            "dimension": 51.63297045101089,
+            "children": [
+              {
+                "id": "d535bd36dbc98e0b",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "LYT Kit.md",
+                    "collapseAll": true,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "ae0aed29d208c352",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "LYT Kit.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 278.5
+      },
+      "active": "d535bd36dbc98e0b"
+    },
+    "Graph": {
+      "main": {
+        "id": "cede0b627ebae1e2",
+        "type": "split",
+        "children": [
+          {
+            "id": "0ababed1aad2fa3e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "8af15f8256588774",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": [
+                    {
+                      "leaf": "8af15f8256588774",
+                      "group": null,
+                      "state": "{\"type\":\"graph\",\"state\":{}}",
+                      "eState": "{}"
+                    }
+                  ]
+                },
+                "state": {
+                  "type": "graph",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "440b3841429709ed",
+        "type": "split",
+        "children": [
+          {
+            "id": "b208c03cadd231ee",
+            "type": "tabs",
+            "dimension": 68.85406464250735,
+            "children": [
+              {
+                "id": "dddbab8b18fd423a",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "77966b04a7f238ed",
+                "type": "leaf",
+                "pane-relief:history-v1": {
+                  "pos": 0,
+                  "stack": []
+                },
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": true,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "50a064198c878664",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "a0eb839f3bf1c43e",
+            "type": "tabs",
+            "dimension": 31.145935357492654,
+            "children": [
+              {
+                "id": "3a5ff77c5fa76295",
+                "type": "leaf",
+                "state": {
+                  "type": "localgraph",
+                  "state": {
+                    "options": {
+                      "collapse-filter": true,
+                      "search": "",
+                      "localJumps": 1,
+                      "localBacklinks": true,
+                      "localForelinks": true,
+                      "localInterlinks": false,
+                      "showTags": false,
+                      "showAttachments": false,
+                      "hideUnresolved": false,
+                      "collapse-color-groups": true,
+                      "colorGroups": [],
+                      "collapse-display": true,
+                      "showArrow": true,
+                      "textFadeMultiplier": -2.1,
+                      "nodeSizeMultiplier": 1,
+                      "lineSizeMultiplier": 1,
+                      "collapse-forces": true,
+                      "centerStrength": 0.518713248970312,
+                      "repelStrength": 10,
+                      "linkStrength": 1,
+                      "linkDistance": 250,
+                      "scale": 0.7696498760494888,
+                      "close": true
+                    }
+                  }
+                }
+              },
+              {
+                "id": "1b378fc6248f1ebf",
+                "type": "leaf",
+                "state": {
+                  "type": "graph",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 311,
+        "collapsed": true
+      },
+      "right": {
+        "id": "7a43a6c530e72e44",
+        "type": "split",
+        "children": [
+          {
+            "id": "ea89fdbc5439f479",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4eff791ca47c2d68",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "c8ee8febe953fbe5",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "56984076d8439678",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "7f452637de698b23",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "18391f562132c0b3",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "collapseAll": true,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 272.0960388183594,
+        "collapsed": true
+      },
+      "active": "77966b04a7f238ed"
+    }
+  },
+  "active": "Clean Slate"
+}

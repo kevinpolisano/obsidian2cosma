@@ -1,0 +1,47 @@
+select_origin: directory
+files_origin: '/Users/polisank/Personnel/PKM/obsidian2cosma/data/LYT-Kit-cosma'
+nodes_origin: ''
+links_origin: ''
+nodes_online: ''
+links_online: ''
+images_origin: ''
+export_target: ''
+history: true
+focus_max: 2
+record_types:
+  undefined:
+    fill: '#858585'
+    stroke: '#858585'
+link_types:
+  undefined:
+    stroke: simple
+    color: '#e1e1e1'
+record_filters: []
+graph_background_color: '#ffffff'
+graph_highlight_color: '#ff6a6a'
+graph_highlight_on_hover: true
+graph_text_size: 10
+graph_arrows: true
+node_size_method: degree
+node_size: 10
+node_size_max: 20
+node_size_min: 2
+attraction_force: 200
+attraction_distance_max: 250
+attraction_vertical: 0
+attraction_horizontal: 0
+views: {}
+chronological_record_meta: last_edit
+record_metas: []
+title: ''
+author: ''
+description: ''
+keywords: []
+link_symbol: ''
+csl: ''
+bibliography: ''
+csl_locale: ''
+css_custom: ''
+devtools: false
+lang: en
+name: ''

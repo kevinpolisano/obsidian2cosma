@@ -85,7 +85,7 @@ def copy_system_birthtime(source, destination):
   # Convert in the format YYYYMMDDHHmm.ss (see man touch)
   birthtime = dt.fromtimestamp(timestamp).strftime('%Y%m%d%H%M.%S')
   # Assign source file's creation date to destination's one (but also overwrite access and modification dates)
-  # Can use instead SetFile -d "$(GetFileInfo -d source)" destination to avoid this issue
+  # Can use instead on Mac OSX: SetFile -d "$(GetFileInfo -d source)" destination to avoid this issue
   str_cmd = "touch -t " + birthtime + " " + "\"" + destination + "\"" 
   os.system(str_cmd)
 

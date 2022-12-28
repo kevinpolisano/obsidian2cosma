@@ -4,3 +4,4 @@ output/
 title2id.csv
 log.txt
 .DS_Store
+cosmoscope.py

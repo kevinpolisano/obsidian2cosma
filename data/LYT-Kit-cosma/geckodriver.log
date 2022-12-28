@@ -1,0 +1,7 @@
+1672235151678	geckodriver	INFO	Listening on 127.0.0.1:52442
+1672235152696	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qt/n284tq590sbgkbfhdjgffm900000gn/T/rust_mozprofileJLwJEz"
+1672235153289	Marionette	INFO	Marionette enabled
+1672235153408	Marionette	INFO	Listening on port 52453
+Read port: 52453
+1672235153714	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/qt/n284tq590sbgkbfhdjgffm900000gn/T/rust_mozprofileJLwJEz/search.json.mozlz4", (void 0)))

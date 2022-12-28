@@ -1,0 +1,129 @@
+{
+  "installedVersion": "1.0.0-beta1",
+  "activeCalendarSet": "Default",
+  "showGettingStartedBanner": true,
+  "hasMigratedDailyNoteSettings": true,
+  "hasMigratedWeeklyNoteSettings": true,
+  "calendarSets": [
+    {
+      "day": {
+        "enabled": true,
+        "format": "",
+        "folder": "Calendar/2022",
+        "openAtStartup": false,
+        "templatePath": "Extras/Templates/Template, Daily 📆.md"
+      },
+      "week": {
+        "enabled": true,
+        "format": "YYYY-MM-DD-[w]ww",
+        "folder": "Calendar/2022",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "month": {
+        "enabled": true,
+        "format": "",
+        "folder": "Calendar/2022",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "quarter": {
+        "enabled": true,
+        "format": "",
+        "folder": "",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "year": {
+        "enabled": true,
+        "format": "",
+        "folder": "",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "id": "Default",
+      "ctime": "2022-04-26T16:19:37-07:00"
+    },
+    {
+      "day": {
+        "enabled": true,
+        "format": "",
+        "folder": "Calendar/2022/Meetings",
+        "openAtStartup": false,
+        "templatePath": "Extras/Templates/Template, Daily 📆.md"
+      },
+      "week": {
+        "enabled": false,
+        "format": "YYYY-MM-DD-[w]ww",
+        "folder": "Calendar/2022/Meetings",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "month": {
+        "enabled": false,
+        "format": "",
+        "folder": "Calendar/2022/Monthly",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "quarter": {
+        "enabled": false,
+        "format": "",
+        "folder": "",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "year": {
+        "enabled": false,
+        "format": "",
+        "folder": "",
+        "openAtStartup": false,
+        "templatePath": ""
+      },
+      "id": "Meetings",
+      "ctime": "2022-04-26T16:26:24-07:00"
+    },
+    {
+      "day": {
+        "enabled": true,
+        "templatePath": "Extras/Templates/Template, Daily 📆.md",
+        "folder": "Calendar/2022/Journal"
+      },
+      "week": {},
+      "month": {},
+      "quarter": {},
+      "year": {},
+      "id": "Journal",
+      "ctime": "2022-06-02T07:46:52-07:00"
+    }
+  ],
+  "enableTimelineComplication": false,
+  "daily": {
+    "folder": "Calendar/2022",
+    "enabled": true
+  },
+  "weekly": {
+    "format": "YYYY-MM-DD-[w]ww",
+    "folder": "Calendar/2022",
+    "template": "",
+    "enabled": true
+  },
+  "monthly": {
+    "format": "",
+    "template": "",
+    "folder": "Calendar/2022/Monthly",
+    "enabled": true
+  },
+  "quarterly": {
+    "format": "",
+    "template": "",
+    "folder": "",
+    "enabled": true
+  },
+  "yearly": {
+    "format": "",
+    "template": "",
+    "folder": "",
+    "enabled": true
+  }
+}
