@@ -12,7 +12,7 @@
 
 ## A Python script to convert Obsidian vault toward Cosma or Zettlr
 
-- Cosma uses the same syntax as [Zettlr](https://zettlr.com), another great editor geared towards academic work, whose `[[internal links]]` relies on unique identifiers `[[ID]]`, in the spirit of the [Zettelkasten method](https://docs.zettlr.com/en/academic/zkn-method/).
+- Cosma uses the same syntax as [Zettlr](https://zettlr.com), another great editor geared towards academic work, whose `[[internal links]]` relies on unique identifiers `[[id]]`, in the spirit of the [Zettelkasten method](https://docs.zettlr.com/en/academic/zkn-method/).
 - Obsidian is different, as it uses the `[[filename]]` to link note files, which in my opinion is more restrictive in terms of **interoperability**. 
 
 There are at least two good reasons to convert a collection of Markdown files written in Obsidian to make it compatible with Cosma:
@@ -20,17 +20,17 @@ There are at least two good reasons to convert a collection of Markdown files wr
 - To be able to **export and share all or part of your knowledge graph with Cosma**, in the form of a single HTML page, simultaneously displaying the notes on the one hand and the graph view on the other.
 
 In practise, the script follows these steps:
-1. **Copy files** of your Obsidian vault (input folder) into another directory (output folder) to avoid accidental changes or losses. Folders starting with "_" are ignored.
+1. **Copy files** of your Obsidian vault (input folder) into another directory (output folder) to avoid accidental changes or losses. Folders starting with `_` are ignored.
 2. *(Optional)* **Filter Markdown files** in the output folder according to particular type or tags
-3. **Create metadata** (ID and title) for each Markdown file where they were missing
-4. **Save a CSV file** containing associated pairs (ID, title) to preserve the correspondence
-5. **Replace all wiki-links** [[filename]] in Obsidian to [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) (if `--zettlr=True`) or (by default) to [Cosma syntax](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links), mixing [Zettlr syntax with ID](https://docs.zettlr.com/en/academic/zkn-method/) and [Obsidian style using alias](https://help.obsidian.md/How+to/Add+aliases+to+note), namely [[ID|alias]]
-6. *(Optional)* **Replace Obsidian typed links** using [Juggl syntax](https://juggl.io/Link+Types) (`- prefix [[link]]`) to the more flexible syntax of [semantic links in Cosma](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links) (`[[prefix:link]]`)
+3. **Create metadata fields** `id` and `title` for each Markdown file where they were missing
+4. **Save a CSV file** containing associated pairs `(id, title)` to preserve the correspondence
+5. **Replace all wiki-links** `[[filename]]` used in Obsidian to [Zettlr syntax with identifiers](https://docs.zettlr.com/en/academic/zkn-method/) if `--zettlr=True` or (by default) to [Cosma syntax](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links), mixing [Zettlr syntax](https://docs.zettlr.com/en/academic/zkn-method/) and [Obsidian style using alias](https://help.obsidian.md/How+to/Add+aliases+to+note), namely `[[id|alias]]`
+6. *(Optional)* **Replace Obsidian typed links** using [Juggl syntax](https://juggl.io/Link+Types) `- prefix [[link]]` to the more flexible syntax of [semantic links in Cosma](https://cosma.graphlab.fr/en/docs/cli/user-manual/#links) `[[prefix:link]]`
 
 ## Installation
 
 - **Download** the Python script
-- **Install packages** required: os, argparse, Path, datetime, re, shutil, csv, unicodedata
+- **Install packages** required: os, platform, argparse, Path, datetime, re, shutil, csv, unicodedata
 
 ## Usage
 
@@ -59,7 +59,7 @@ Optional arguments:
 
 In the directory `data/` you will find an example of Obsidian vault called [LYT-Kit](https://www.linkingyourthinking.com/download-lyt-kit).
 
-### `obsidian2cosma` converts LYT-Kit to LYT-Kit-cosma
+### `obsidian2cosma` converts `LYT-Kit/` to `LYT-Kit-cosma/`
 
 At the folder root run the Python script:
 
@@ -96,7 +96,7 @@ cosma m
 
 ![LYT-Kit graph view displayed by Cosma](https://github.com/kevinpolisano/obsidian2cosma/blob/main/data/LYT-Kit/LYT-kit.png)
 
-### `obsidian2cosma --zettlr True` converts LYT-Kit to LYT-Kit-zettlr
+### `obsidian2cosma --zettlr True` converts `LYT-Kit/` to `LYT-Kit-zettlr/`
 
 At the folder root run the Python script:
 
@@ -118,9 +118,7 @@ Known bugs in Cosma:
 
 ## Related repository
 
-`òbsidian2cosma` converts an Obsidian vault into a collection of Markdown files readable by Cosma and Zettlr. Conversely, it is possible to implement a script `zettlr2obsidian`:
-
-[Conversion tool to make Zettlr markdown files be visible in Graph Mode in Obsidian](https://gist.github.com/KarlClinckspoor/4ec995fd506ec6483b8e02d8afc388fc/raw/c787747da28d97080c64077352ec6d41e80ae6f5/conversion.py)
+`òbsidian2cosma` converts an Obsidian vault into a collection of Markdown files readable by Cosma and Zettlr. Conversely, it is possible to implement a script `zettlr2obsidian`: [Conversion tool to make Zettlr markdown files be visible in Graph Mode in Obsidian](https://gist.github.com/KarlClinckspoor/4ec995fd506ec6483b8e02d8afc388fc/raw/c787747da28d97080c64077352ec6d41e80ae6f5/conversion.py)
 
 ## Contact
 
